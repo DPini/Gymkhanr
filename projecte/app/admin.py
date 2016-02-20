@@ -1,15 +1,17 @@
 from django.contrib import admin
-from .models import Gymcana,Prova,ProvaTest,ProvaCodi,RespostaTest
+from .models import Gymcana,ProvaTest,ProvaCodi,RespostaTest
 # Register your models here.
 
-admin.site.register(Gymcana)
-#admin.site.register(Prova)
-admin.site.register(ProvaTest)
-admin.site.register(ProvaCodi)
-admin.site.register(RespostaTest)
 
-class RespostaTestInlineAdmin(admin.TabularInline):
+class RespostaTestInline(admin.StackedInline):
     model = RespostaTest
 
 class ProvaTestAdmin(admin.ModelAdmin):
-    inlines = [ RespostaTestInlineAdmin ]
+    inlines = [ RespostaTestInline ]
+
+# Register your models here.
+admin.site.register(Gymcana)
+#admin.site.register(Prova)
+admin.site.register(ProvaTest,ProvaTestAdmin)
+admin.site.register(ProvaCodi)
+admin.site.register(RespostaTest)

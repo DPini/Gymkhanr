@@ -15,7 +15,13 @@
                         {% else %} <p> Pendent!</p>
                         {% endif %}
                         <p>{{ prova.descripcio }}</p>
-	
+		        {% for resposta in respostes %}
+			{% if prova.tipo = 1 %}
+			  <button type="button">{{ resposta.resposta}} </button>	
+			{% elif prova.tipo = 2 %}
+			     empty	
+			{% endif %}
+			{% endfor%}
 
   </body>
 </html>

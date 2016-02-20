@@ -14,7 +14,7 @@ class Prova(models.Model) :
      superada = models.BooleanField()
      def __str__(self):
             return self.nom
-
+     tipo = models.IntegerField()
 
 class ProvaTest(Prova):
     respostacorrecta = models.IntegerField()
