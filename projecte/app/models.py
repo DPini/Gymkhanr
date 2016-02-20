@@ -15,8 +15,13 @@ class Prova(models.Model) :
      def __str__(self):
             return self.nom
 
+
 class ProvaTest(Prova):
-    pass 
+    respostacorrecta = models.IntegerField()
+
+class RespostaTest(models.Model):
+    idpregunta = models.ForeignKey(ProvaTest)
+    resposta = models.CharField(max_length = 50)
 
 class ProvaCodi(Prova):
-    pass 
+    codi = models.CharField(max_length = 20)
