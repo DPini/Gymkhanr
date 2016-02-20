@@ -1,0 +1,24 @@
+<html>
+	<head>
+            <title>Gymkhanr</title>
+        </head>
+        <body>
+       
+            <h1><a href="">Gymkhanr</a></h1>
+          
+            <h2><a href="">{{gymcana.nom}} </a></h2>
+            <p> {{gymcana.descripcio}} </p>
+
+		    {% for prova in proves %}
+       
+			<h3><a href="{{prova.pk}}">{{ prova.nom }}</a></h3>
+			{% if prova.superada %} <p> Superada! </p>
+			{% else %} <p> Pendent!</p>
+			{% endif %}
+		       {% endfor %}
+		
+            
+
+         
+        </body>
+    </html>

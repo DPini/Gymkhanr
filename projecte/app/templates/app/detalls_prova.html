@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>{{prova.nom}}</title>
+    <meta lang="es">
+  </head>
+  <body>
+
+            <h1><a href="">Gymkhanr</a></h1>
+
+            <h2><a href="..">{{gymcana.nom}} </a></h2>
+
+
+                        <h3>{{ prova.nom }}</h3>
+			{% if prova.superada %} <p> Superada! </p>
+                        {% else %} <p> Pendent!</p>
+                        {% endif %}
+                        <p>{{ prova.descripcio }}</p>
+	
+
+  </body>
+</html>
