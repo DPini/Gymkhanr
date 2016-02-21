@@ -44,9 +44,9 @@ def detalls_prova(request, idprova, pk):
                     prova.save()
                 from django.http import HttpResponseRedirect
                 return HttpResponseRedirect(".")
-        else:
-            form = ProvaCodiForm();
-            return render(request,'app/detalls_prova.html', {'form': form, 'prova': prova, 'gymcana': gymcana})
+        # else:
+        form = ProvaCodiForm();
+        return render(request,'app/detalls_prova.html', {'form': form, 'prova': prova, 'gymcana': gymcana})
 
 
 """

@@ -18,15 +18,15 @@
             {% else %} <button type="button" class="btn btn-danger">Pending</button>
             {% endif %}
         </h3>
+        <p>{{ prova.descripcio }}</p>
         {% if prova.superada %}
         {% else %}
         <form action="." method="post">
           {% csrf_token %}
           {{ form }}
-          <input type="submit" value="Submit" />
+          <input type="submit" class="btn btn-submit" value="Send the answer!" />
         </form>
         {% endif %}
-        <p>{{ prova.descripcio }}</p>
         </div>
     </div>
     <div class="col-sm-2"></div>
