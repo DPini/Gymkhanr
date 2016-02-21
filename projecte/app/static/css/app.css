@@ -1,0 +1,45 @@
+body {
+    background: #4CBB17
+}
+
+#title {
+    font-family: "Palatino";
+    color: #006600;
+    font-size: 500%;
+    padding-bottom: 20px;
+    <!--text-shadow: 7px 7px 15px #010101-->
+}
+
+#center-col {
+    background-color: #FFFDD0;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 7px;
+}
+
+#clef-col {
+    background-color: #FFFDD0;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#crig-col {
+    background-color: #FFFDD0;
+    padding: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+a {
+    color: #006600;
+}
+
+a:hover {
+    color: #0BDA51
+}
+
+#link_title:hover {
+    color: #006600; !important
+    text-decoration: none; !important
+}

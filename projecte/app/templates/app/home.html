@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<html>
+	<head>
+        <title>Gymkhanr</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    </head>
+    <body>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h1 id="title"><a href="." id="link_title">Gymkhanr</a></h1>
+                <div class="col-sm-5" id="center-col">
+                <h2>Welcome to Gymkhanr</h2>
+                <p>Gymkhanr allows you to easily create and organise gymkhanas, treasure hunts, and any other activities you may think of, and also lets the players see their progress and their current objectives at a glance.</p>
+                </div>
+
+                <div class="col-sm-6" id="center-col">
+                <h2>Create gymkhanas easily</h2>
+                <p>Gymkhanr lets you create two simple but powerful types of tests: Questions and Challenges. Questions can have a lot of answers you can choose, but only one of them is correct! Meanwhile, Challenges can only be completed when you input a code, given to you by the creator of the gymkhana.</p>
+                </div>
+
+                <div class="col-sm-4" id="center-col">
+                <h2>What are you waiting for?</h2>
+                <p><a href="">Sign up</a> now to create your own gymkhanas or, if you're still not sure about how Gymkhanr works, take a look at <a href="">this sample gymkhana</a>.</p>
+                </div>
+
+                <div class="col-sm-7" id="center-col">
+                <h2>Already have an account? Log in</h2>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="user">User</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="user" placeholder="Enter user">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </body>
+</html>

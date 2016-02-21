@@ -1,25 +1,26 @@
+{% load staticfiles %}
 <html>
 	<head>
-            <title>Gymkhanr</title>
-        </head>
-        <body>
-       
-            <h1><a href="">Gymkhanr</a></h1>
-          
+        <title>{{gymcana.nom}} - Gymkhanr</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    </head>
+    <body>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h1 id="title"><a href="../.." id="link_title">Gymkhanr</a></h1>
+            <div id="center-col">
             <h2><a href="">{{gymcana.nom}} </a></h2>
             <p> {{gymcana.descripcio}} </p>
-
-		    {% for prova in proves %}
-       
-			<h3><a href="{{prova.pk}}">{{ prova.nom }}</a></h3>
-			{% if prova.superada %} <p> Superada! </p>
-			{% else %} <p> Pendent!</p>
-			{% endif %}
-
+		        {% for prova in proves %}
+		            <h3><a href="{{prova.pk}}">{{ prova.nom }}</a>
+                    {% if prova.superada %} <button type="button" class="btn btn-success">Success!</button>
+                    {% else %} <button type="button" class="btn btn-danger">Pending</button>
+                    {% endif %}</h3>
 		        {% endfor %}
-		
-            
-
-         
-        </body>
-    </html>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </body>
+</html>

@@ -1,27 +1,34 @@
+{% load staticfiles %}
 <html>
   <head>
     <title>{{prova.nom}}</title>
-    <meta lang="es">
+    <meta lang="en">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
   </head>
   <body>
-
-            <h1><a href="">Gymkhanr</a></h1>
-
-            <h2><a href="..">{{gymcana.nom}} </a></h2>
-
-
-                        <h3>{{ prova.nom }}</h3>
-			{% if prova.superada %} <p> Superada! </p>
-                        {% else %} <p> Pendent!</p>
-                        {% endif %}
-                        <p>{{ prova.descripcio }}</p>
-		        {% for resposta in respostes %}
-			{% if prova.tipo = 1 %}
-			  <button type="button">{{ resposta.resposta}} </button>	
-			{% elif prova.tipo = 2 %}
-			     empty	
-			{% endif %}
-			{% endfor%}
-
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <h1 id="title"><a href="../../.." id="link_title">Gymkhanr</a></h1>
+        <div id="center-col">
+        <h2><a href="..">{{gymcana.nom}} </a></h2>
+        <h3>{{ prova.nom }}
+            {% if prova.superada %} <button type="button" class="btn btn-success">Success!</button>
+            {% else %} <button type="button" class="btn btn-danger">Pending</button>
+            {% endif %}
+        </h3>
+        {% if prova.superada %}
+        {% else %}
+        <form action="." method="post">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" value="Submit" />
+        </form>
+        {% endif %}
+        <p>{{ prova.descripcio }}</p>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
   </body>
 </html>
