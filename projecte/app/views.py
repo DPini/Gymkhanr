@@ -18,7 +18,20 @@ def detalls_prova(request, idprova, pk):
     if prova.tipo == 2:
         prova = ProvaTest.objects.get(pk = idprova)
         respostes = RespostaTest.objects.filter(idpregunta = idprova)
-        return render(request, 'app/detalls_prova.html', {'prova': prova, 'gymcana': gymcana, 'respostes': respostes})
+        #return render(request, 'app/detalls_prova.html', {'prova': prova, 'gymcana': gymcana, 'respostes': respostes})
+        from .forms import ProvaTestForm
+        if request.method == 'POST':
+            form = ProvaTestForm(request.POST,idprova=idprova)
+            if form.is_valid():
+                resposta = form.cleaned_data['resposta']
+                if resposta.id == prova.respostacorrecta:
+                    prova.superada = 1
+                    prova.save()
+                from django.http import HttpResponseRedirect
+                return HttpResponseRedirect(".")
+        else:
+            form = ProvaTestForm(idprova=idprova);
+            return render(request,'app/detalls_prova.html', {'form': form, 'prova': prova, 'gymcana': gymcana})
     if prova.tipo == 1:
         prova = ProvaCodi.objects.get(pk = idprova)
         from .forms import ProvaCodiForm
